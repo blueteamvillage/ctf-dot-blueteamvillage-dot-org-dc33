@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef, useEffect } from "react"
-import { Search, Menu, X, Shield, Trophy, FileText, Files, MapPin, Users } from "lucide-react"
+import { Search, Menu, X, Shield, Trophy, FileText, Files, MapPin, Users, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { SearchResults } from "@/components/search-results"
@@ -19,6 +19,7 @@ export function Header() {
     { href: "/", label: "Home", icon: Shield },
     { href: "/about", label: "About", icon: Users },
     { href: "/challenges", label: "Challenges", icon: Trophy },
+    { href: "/past-winners", label: "Past Winners", icon: Award },
     { href: "https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/index.html", label: "Download Files", icon: Files },
     { href: "/location", label: "Location", icon: MapPin },
   ]
