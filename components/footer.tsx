@@ -1,4 +1,4 @@
-import { Github, Twitter, Mail, ExternalLink } from "lucide-react"
+import { Github, Twitter, ExternalLink, Linkedin } from "lucide-react"
 
 export function Footer() {
   return (
@@ -11,14 +11,17 @@ export function Footer() {
               Blue Team Village's premier cybersecurity competition at DEF CON 33.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="https://x.com/blueteamvillage" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="https://github.com/blueteamvillage/" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="mailto:ctf@blueteamvillage.org" className="text-gray-400 hover:text-cyan-400 transition-colors">
-                <Mail className="w-5 h-5" />
+              <a href="https://www.linkedin.com/company/the-blue-team-village" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://bsky.app/profile/blueteamvillage.bsky.social" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                <ExternalLink className="w-5 h-5" />
               </a>
             </div>
           </div>

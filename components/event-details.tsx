@@ -33,7 +33,7 @@ export function EventDetails() {
               <CardTitle className="text-purple-300">Format</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="text-gray-300">Jeopardy Style</p>
+              <p className="text-gray-300">CTFd Platform</p>
               <p className="text-sm text-gray-400">Multiple categories</p>
             </CardContent>
           </Card>

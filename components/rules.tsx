@@ -123,7 +123,7 @@ export function Rules() {
             attack techniques, the primary focus is on detection, analysis, and response.
           </p>
           <p className="text-gray-300 text-sm">
-            Questions during the competition? Look for Blue Team Village organizers wearing cyan badges, or visit our
+            Questions during the competition? Look for Blue Team Village organizers, or visit our
             help desk in the village area.
           </p>
         </div>
