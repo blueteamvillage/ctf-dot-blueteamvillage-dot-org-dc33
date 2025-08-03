@@ -1,4 +1,5 @@
 import { Github, Twitter, ExternalLink, Linkedin } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -6,7 +7,16 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold text-cyan-300 mb-4">BTV CTF</h3>
+            <div className="flex items-center space-x-3 mb-4">
+              <Image
+                src="/obsidian.png"
+                alt="Project Obsidian Logo"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
+              <h3 className="text-xl font-bold text-cyan-300">BTV CTF</h3>
+            </div>
             <p className="text-gray-400 text-sm mb-4">
               Blue Team Village's premier cybersecurity competition at DEF CON 33.
             </p>
@@ -40,8 +50,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://ctfd.dc33.blueteamvillage.org/register" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-                  Registration
+                <a href="https://ctfd.dc33.blueteamvillage.org" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                  CTFd
                 </a>
               </li>
               <li>
@@ -56,7 +66,7 @@ export function Footer() {
             <h4 className="text-lg font-semibold text-white mb-4">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="https://blueteamvillage.org" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                <a href="/about" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
                   About
                 </a>
               </li>
@@ -78,6 +88,18 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Blue Team Village Logo */}
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/btv-logo.png"
+              alt="Blue Team Village Logo"
+              width={160}
+              height={160}
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            />
+          </div>
+
+
           {/* <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>
             <ul className="space-y-2">
@@ -96,18 +118,20 @@ export function Footer() {
           </div> */}
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Blue Team Village. All rights reserved.</p>
-          <div className="flex space-x-6">
-            <a href="/privacy-policy" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-              Privacy Policy
-            </a>
-            <a href="/terms-of-service" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-              Terms of Service
-            </a>
-            <a href="/code-of-conduct" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-              Code of Conduct
-            </a>
+        <div className="border-t border-gray-800 pt-8">          
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Blue Team Village. All rights reserved.</p>
+            <div className="flex space-x-6">
+              <a href="/privacy-policy" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                Privacy Policy
+              </a>
+              <a href="/terms-of-service" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                Terms of Service
+              </a>
+              <a href="/code-of-conduct" className="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                Code of Conduct
+              </a>
+            </div>
           </div>
         </div>
 

@@ -3,7 +3,11 @@
 import { useState, useEffect } from "react"
 import { Clock } from "lucide-react"
 
-export function CountdownTimer() {
+interface CountdownTimerProps {
+  onCountdownComplete?: (isComplete: boolean) => void
+}
+
+export function CountdownTimer({ onCountdownComplete }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -25,8 +29,10 @@ export function CountdownTimer() {
         const seconds = Math.floor((difference % (1000 * 60)) / 1000)
         
         setTimeLeft({ days, hours, minutes, seconds })
+        onCountdownComplete?.(false)
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+        onCountdownComplete?.(true)
       }
     }, 1000)
     

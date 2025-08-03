@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, Users, Trophy } from "lucide-react"
 import Image from "next/image"
@@ -5,6 +8,7 @@ import Link from "next/link"
 import { CountdownTimer } from "./countdown-timer"
 
 export function Hero() {
+  const [isCountdownComplete, setIsCountdownComplete] = useState(false)
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-8 md:py-0">
       {/* Animated background grid */}
@@ -22,7 +26,7 @@ export function Hero() {
           {/* Obsidian Logo */}
           <div className="flex justify-center mb-4 md:mb-6">
             <Image
-              src="/obsidian.png"
+              src="/btv-logo.png"
               alt="Obsidian Logo"
               width={120}
               height={120}
@@ -31,7 +35,7 @@ export function Hero() {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-3 md:mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-green-400 bg-clip-text text-transparent animate-pulse">
-            BTV CTF
+            Blue Team Village CTF
           </h1>
           <h2 className="text-xl md:text-2xl lg:text-4xl font-semibold mb-2 text-cyan-300">DEF CON 33</h2>
           <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 md:mb-8">Access Everywhere • Defend Everything</p>
@@ -63,14 +67,23 @@ export function Hero() {
         </div>
 
         {/* Countdown Timer */}
-        <CountdownTimer />
+        <CountdownTimer onCountdownComplete={setIsCountdownComplete} />
 
         <div className="flex flex-col sm:flex-row justify-center gap-8">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold px-12 py-4 rounded-lg transition-all duration-300 transform hover:scale-110 text-lg shadow-lg"
+            disabled={!isCountdownComplete}
+            className={`font-bold px-12 py-4 rounded-lg transition-all duration-300 transform text-lg shadow-lg ${
+              isCountdownComplete
+                ? "bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white hover:scale-110"
+                : "bg-gray-600 text-gray-400 cursor-not-allowed opacity-50"
+            }`}
           >
-            <Link href="https://ctfd.dc33.blueteamvillage.org/register">Register Now</Link>
+            {isCountdownComplete ? (
+              <Link href="https://ctfd.dc33.blueteamvillage.org/register">Register Now</Link>
+            ) : (
+              "Registration Opens Soon"
+            )}
           </Button>
           <Button
             size="lg"
