@@ -392,7 +392,7 @@ export default function CyberbitPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
+      {/* <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-white">Ready to Defend?</h2>
           <p className="text-xl text-gray-300 mb-8">
@@ -417,7 +417,7 @@ export default function CyberbitPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

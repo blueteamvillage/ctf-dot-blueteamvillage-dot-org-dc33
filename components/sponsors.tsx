@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function Sponsors() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+    <section className="py-20 px-6 sm:px-8 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
