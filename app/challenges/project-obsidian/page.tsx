@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -12,18 +14,25 @@ import {
   ExternalLink,
   Zap,
   BookOpen,
-  LinkIcon,
-  AlertCircle,
-  HelpCircle,
-  ArrowRight,
-  Search,
-  Database,
-  Network,
-  Lock,
+  Trophy,
 } from "lucide-react"
 import Link from "next/link"
+import { useState, useEffect } from "react"
+import { KillChainTabs, projectObsidianKillChains } from "@/components/kill-chain-tabs"
 
 export default function ProjectObsidianPage() {
+  const [isCountdownComplete, setIsCountdownComplete] = useState(false)
+
+  useEffect(() => {
+    const targetDate = new Date('2025-08-08T10:00:00-07:00') // August 8, 2025 at 10:00 AM PST
+    const now = new Date().getTime()
+    const distance = targetDate.getTime() - now
+
+    if (distance < 0) {
+      setIsCountdownComplete(true)
+    }
+  }, [])
+
   return (
     <div className="min-h-screen bg-black text-white">
       <Header />
@@ -72,6 +81,122 @@ export default function ProjectObsidianPage() {
           </div>
         </div>
       </section>
+
+      {/* Platform Access Section */}
+      <section className="py-12 px-6 sm:px-8 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-4xl mx-auto text-center">
+          {!isCountdownComplete ? (
+            <>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Project Obsidian Starts August 8, 2025</h2>
+              <p className="text-lg text-gray-300 mb-6">
+                The CTF platforms will be available once the conference begins at 10:00 AM PST.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* CTFd Platform - Disabled */}
+                <Card className="bg-gray-900/50 border-gray-600/30 opacity-50">
+                  <CardHeader className="text-center pb-4">
+                    <Trophy className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+                    <CardTitle className="text-xl text-gray-400">CTFd Platform</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-3">
+                    <p className="text-gray-400 text-sm">
+                      Register your team and submit flags to earn points. This is where you'll track your progress 
+                      and compete with other teams.
+                    </p>
+                    <Button disabled className="w-full bg-gray-600 text-gray-400 cursor-not-allowed text-sm">
+                      <Clock className="w-4 h-4 mr-2" />
+                      Available August 8, 2025
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Wazuh Platform - Disabled */}
+                <Card className="bg-gray-900/50 border-gray-600/30 opacity-50">
+                  <CardHeader className="text-center pb-4">
+                    <Shield className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+                    <CardTitle className="text-xl text-gray-400">Wazuh SIEM</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-3">
+                    <p className="text-gray-400 text-sm">
+                      Access the Security Information and Event Management platform to analyze logs, 
+                      investigate incidents, and find clues to solve the challenges.
+                    </p>
+                    <Button disabled className="w-full bg-gray-600 text-gray-400 cursor-not-allowed text-sm">
+                      <Clock className="w-4 h-4 mr-2" />
+                      Available August 8, 2025
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </>
+          ) : (
+            <>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Project Obsidian is Live! 🚀</h2>
+              <p className="text-lg text-gray-300 mb-6">
+                The conference has begun! Head to the platforms below to start your incident response journey.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* CTFd Platform - Active */}
+                <Card className="bg-gray-900/50 border-purple-500/30 hover:border-purple-400/50 transition-all duration-300">
+                  <CardHeader className="text-center pb-4">
+                    <Trophy className="w-12 h-12 text-purple-400 mx-auto mb-3" />
+                    <CardTitle className="text-xl text-purple-300">CTFd Platform</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-3">
+                    <p className="text-gray-300 text-sm">
+                      Register your team and submit flags to earn points. This is where you'll track your progress 
+                      and compete with other teams.
+                    </p>
+                    <Link href="https://ctfd.dc33.blueteamvillage.org/" target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold text-sm">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Go to CTFd Platform
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+
+                {/* Wazuh Platform - Active */}
+                <Card className="bg-gray-900/50 border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300">
+                  <CardHeader className="text-center pb-4">
+                    <Shield className="w-12 h-12 text-cyan-400 mx-auto mb-3" />
+                    <CardTitle className="text-xl text-cyan-300">Wazuh SIEM</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-3">
+                    <p className="text-gray-300 text-sm">
+                      Access the Security Information and Event Management platform to analyze logs, 
+                      investigate incidents, and find clues to solve the challenges.
+                    </p>
+                    <Link href="https://wazuh.dc33.blueteamvillage.org/" target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-sm">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Go to Wazuh SIEM
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/30 rounded-lg p-4">
+                <h3 className="text-lg font-semibold text-purple-300 mb-3">Getting Started</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-300">
+                  <div>
+                    <h4 className="font-semibold text-cyan-300 mb-1">Step 1: Register Your Team</h4>
+                    <p>Visit the CTFd platform to register your team and get access to the challenge categories.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-green-300 mb-1">Step 2: Access Wazuh SIEM</h4>
+                    <p>Use the Wazuh platform to analyze logs and investigate the security incidents.</p>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+
 
       {/* Main Content Tabs */}
       <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
@@ -239,284 +364,10 @@ export default function ProjectObsidianPage() {
             </TabsContent>
 
             {/* Kill Chain Tabs */}
-            <TabsContent value="killchain1">
-              <Card className="bg-gray-900/50 border-red-500/30">
-                <CardHeader>
-                  <CardTitle className="text-3xl font-bold text-red-300">Kill Chain 1: Initial Compromise</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <p className="text-gray-300">
-                      Uncover an adversary&apos;s full compromise of multiple Windows workstations. Investigate the adversary&apos;s 
-                      activities from reconnaissance to credential theft, persistence, and privilege escalation while defenders 
-                      trace their steps through forensic artifacts, browser activity, and Active Directory abuse.
-                    </p>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-                        <h4 className="text-red-300 font-semibold mb-2">Focus Areas</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Windows forensics</li>
-                          <li>• Browser artifact analysis</li>
-                          <li>• Active Directory investigation</li>
-                          <li>• Credential theft detection</li>
-                        </ul>
-                      </div>
-                      <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-                        <h4 className="text-red-300 font-semibold mb-2">Challenges</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• 25+ challenges</li>
-                          <li>• Progressive difficulty</li>
-                          <li>• Real-world scenarios</li>
-                          <li>• Hands-on practice</li>
-                        </ul>
-                      </div>
-                      <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
-                        <h4 className="text-red-300 font-semibold mb-2">Skills Developed</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Incident response</li>
-                          <li>• Digital forensics</li>
-                          <li>• Threat hunting</li>
-                          <li>• Analysis techniques</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="killchain2">
-              <Card className="bg-gray-900/50 border-orange-500/30">
-                <CardHeader>
-                  <CardTitle className="text-3xl font-bold text-orange-300">Kill Chain 2: RAT & Social Engineering</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <p className="text-gray-300">
-                      Track a remote access trojan (RAT) enabled social engineering attack, uses phishing, RMM tools, 
-                      and AD recon to compromise a user and explore lateral movement.
-                    </p>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
-                        <h4 className="text-orange-300 font-semibold mb-2">Focus Areas</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• RAT analysis</li>
-                          <li>• Social engineering detection</li>
-                          <li>• Phishing investigation</li>
-                          <li>• Lateral movement tracking</li>
-                        </ul>
-                      </div>
-                      <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
-                        <h4 className="text-orange-300 font-semibold mb-2">Challenges</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• 20+ challenges</li>
-                          <li>• Network analysis</li>
-                          <li>• Malware reverse engineering</li>
-                          <li>• Behavioral analysis</li>
-                        </ul>
-                      </div>
-                      <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
-                        <h4 className="text-orange-300 font-semibold mb-2">Skills Developed</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Malware analysis</li>
-                          <li>• Network forensics</li>
-                          <li>• Threat intelligence</li>
-                          <li>• Incident containment</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="killchain3">
-              <Card className="bg-gray-900/50 border-yellow-500/30">
-                <CardHeader>
-                  <CardTitle className="text-3xl font-bold text-yellow-300">Kill Chain 3: Web Application Attack</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <p className="text-gray-300">
-                      Challenges players to investigate a web application attack targeting a vulnerable web application, 
-                      where the adversary exploits vulnerabilities, all while evading detection across proxy headers 
-                      and misaligned logs.
-                    </p>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                        <h4 className="text-yellow-300 font-semibold mb-2">Focus Areas</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Web application security</li>
-                          <li>• Log analysis</li>
-                          <li>• Proxy investigation</li>
-                          <li>• Vulnerability assessment</li>
-                        </ul>
-                      </div>
-                      <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                        <h4 className="text-yellow-300 font-semibold mb-2">Challenges</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• 15+ challenges</li>
-                          <li>• Web exploitation</li>
-                          <li>• Detection evasion</li>
-                          <li>• Advanced persistence</li>
-                        </ul>
-                      </div>
-                      <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
-                        <h4 className="text-yellow-300 font-semibold mb-2">Skills Developed</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Web security</li>
-                          <li>• Log correlation</li>
-                          <li>• Attack detection</li>
-                          <li>• Security monitoring</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="killchain4">
-              <Card className="bg-gray-900/50 border-green-500/30">
-                <CardHeader>
-                  <CardTitle className="text-3xl font-bold text-green-300">Kill Chain 4: Phishing & Exfiltration</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <p className="text-gray-300">
-                      Follows a convincing phishing attack that tricks a corporate employee into opening a malicious 
-                      attachment, triggering macro-based malware, persistence via scheduled tasks, DNS tunneling, 
-                      and stealthy exfiltration. Challenging defenders to trace every log cleared, service modified, 
-                      and file exfiltrated in the wake of the compromise.
-                    </p>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-                        <h4 className="text-green-300 font-semibold mb-2">Focus Areas</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Phishing investigation</li>
-                          <li>• Macro malware analysis</li>
-                          <li>• DNS tunneling detection</li>
-                          <li>• Data exfiltration tracking</li>
-                        </ul>
-                      </div>
-                      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-                        <h4 className="text-green-300 font-semibold mb-2">Challenges</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• 16+ challenges</li>
-                          <li>• Advanced persistence</li>
-                          <li>• Covert communication</li>
-                          <li>• Evidence preservation</li>
-                        </ul>
-                      </div>
-                      <div className="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
-                        <h4 className="text-green-300 font-semibold mb-2">Skills Developed</h4>
-                        <ul className="text-sm text-gray-300 space-y-1">
-                          <li>• Advanced forensics</li>
-                          <li>• Threat hunting</li>
-                          <li>• Incident response</li>
-                          <li>• Evidence analysis</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            {/* Kill Chain 5 Tab */}
-            <TabsContent value="killchain5">
-              <Card className="bg-gray-900/50 border-blue-500/30">
-                <CardHeader>
-                  <CardTitle className="text-3xl font-bold text-blue-300">Digital Breadcrumbs and Village Voyages</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-6">
-                    <p className="text-lg text-gray-300 leading-relaxed">
-                      Kill Chain #5 takes players on a journey across multiple village domains, challenging them to uncover 
-                      user behaviors, downloaded files, browser artifacts, and security community trivia—all while stitching 
-                      together clues from file servers, local activity, and curiosity-fueled internet footprints.
-                    </p>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                        <h4 className="text-blue-300 font-semibold mb-3">Investigation Domains</h4>
-                        <ul className="text-sm text-gray-300 space-y-2">
-                          <li>• Multiple village domains</li>
-                          <li>• User behavior analysis</li>
-                          <li>• Downloaded file tracking</li>
-                          <li>• Browser artifact examination</li>
-                          <li>• Security community research</li>
-                        </ul>
-                      </div>
-                      <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                        <h4 className="text-blue-300 font-semibold mb-3">Evidence Sources</h4>
-                        <ul className="text-sm text-gray-300 space-y-2">
-                          <li>• File server analysis</li>
-                          <li>• Local activity logs</li>
-                          <li>• Internet footprint tracking</li>
-                          <li>• Cross-domain correlation</li>
-                          <li>• Digital breadcrumb trails</li>
-                        </ul>
-                      </div>
-                      <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                        <h4 className="text-blue-300 font-semibold mb-3">Challenge Focus</h4>
-                        <ul className="text-sm text-gray-300 space-y-2">
-                          <li>• Clue stitching and correlation</li>
-                          <li>• Multi-domain investigation</li>
-                          <li>• Curiosity-driven research</li>
-                          <li>• Community knowledge application</li>
-                          <li>• Pattern recognition across sources</li>
-                        </ul>
-                      </div>
-                      <div className="bg-blue-500/10 border border-blue-500/30 rounded-lg p-4">
-                        <h4 className="text-blue-300 font-semibold mb-3">Skills Developed</h4>
-                        <ul className="text-sm text-gray-300 space-y-2">
-                          <li>• Cross-domain analysis</li>
-                          <li>• Digital footprint tracking</li>
-                          <li>• Evidence correlation</li>
-                          <li>• Community intelligence</li>
-                          <li>• Multi-source investigation</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+            <KillChainTabs killChains={projectObsidianKillChains} />
           </Tabs>
         </div>
       </section>
-
-      {/* Call to Action */}
-      {/* <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-white">Ready to Join Project Obsidian?</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Register your team now and prepare for an unforgettable incident response experience.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
-            >
-              Register Team
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 font-semibold px-8 py-3 rounded-lg transition-all duration-300 bg-transparent"
-            >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              View Platform
-            </Button>
-          </div>
-        </div>
-      </section> */}
 
       <Footer />
     </div>
