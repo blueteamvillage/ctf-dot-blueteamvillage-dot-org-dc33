@@ -36,7 +36,7 @@ export default function Defcon31Page() {
       <div className="max-w-6xl mx-auto px-4 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {/* 1st Place */}
-          <Card className="bg-gradient-to-br from-yellow-500/10 to-yellow-600/10 border-yellow-500/30 order-1 lg:order-2">
+          <Card className="bg-gradient-to-br from-yellow-500/10 to-yellow-600/10 border-yellow-500/30">
             <CardHeader className="text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
@@ -62,7 +62,7 @@ export default function Defcon31Page() {
           </Card>
 
           {/* 2nd Place */}
-          <Card className="bg-gradient-to-br from-gray-500/10 to-gray-600/10 border-gray-500/30 order-2 lg:order-1">
+          <Card className="bg-gradient-to-br from-gray-500/10 to-gray-600/10 border-gray-500/30">
             <CardHeader className="text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full flex items-center justify-center">
@@ -81,7 +81,7 @@ export default function Defcon31Page() {
           </Card>
 
           {/* 3rd Place */}
-          <Card className="bg-gradient-to-br from-orange-500/10 to-orange-600/10 border-orange-500/30 order-3">
+          <Card className="bg-gradient-to-br from-orange-500/10 to-orange-600/10 border-orange-500/30">
             <CardHeader className="text-center">
               <div className="flex justify-center mb-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
