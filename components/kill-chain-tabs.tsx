@@ -33,7 +33,7 @@ export function KillChainTabs({ killChains, className = "" }: KillChainTabsProps
     { id: "overview", title: "Overview", icon: BookOpen, color: "purple" },
     ...killChains.map(chain => ({ 
       id: chain.id, 
-      title: chain.id === "killchain5" ? "Digital Breadcrumbs and Village Voyages" : chain.title,
+      title: chain.title,
       icon: Target, 
       color: chain.color 
     }))
@@ -317,7 +317,7 @@ export const projectObsidianKillChains: KillChainData[] = [
   },
   {
     id: "killchain5",
-    title: "Kill Chain #5",
+    title: "Kill Chain 5",
     description: "Kill Chain #5 takes players on a journey across multiple village domains, challenging them to uncover user behaviors, downloaded files, browser artifacts, and security community trivia—all while stitching together clues from file servers, local activity, and curiosity-fueled internet footprints.",
     color: "blue",
     focusAreas: [
