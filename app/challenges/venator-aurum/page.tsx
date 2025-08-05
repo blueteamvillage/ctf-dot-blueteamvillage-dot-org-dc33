@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -5,30 +8,38 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
-  Globe,
   Target,
   Users,
   Clock,
   ExternalLink,
   Zap,
   BookOpen,
-  LinkIcon,
-  AlertCircle,
-  HelpCircle,
-  ArrowRight,
-  Search,
-  Database,
-  Network,
   Lock,
   Puzzle,
   Eye,
   Code,
   MapPin,
   Brain,
+  ChevronDown,
+  Trophy,
+  Shield,
 } from "lucide-react"
 import Link from "next/link"
 
 export default function VenatorAurumPage() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isCountdownComplete, setIsCountdownComplete] = useState(false)
+
+  useEffect(() => {
+    const targetDate = new Date('2025-08-08T10:00:00-07:00') // August 8, 2025 at 10:00 AM PST
+    const now = new Date().getTime()
+    const distance = targetDate.getTime() - now
+
+    if (distance < 0) {
+      setIsCountdownComplete(true)
+    }
+  }, [])
+  
   return (
     <div className="min-h-screen bg-black text-white">
       <Header />
@@ -78,32 +89,178 @@ export default function VenatorAurumPage() {
         </div>
       </section>
 
+      {/* Platform Access Section */}
+      <section className="py-12 px-6 sm:px-8 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-4xl mx-auto text-center">
+          {!isCountdownComplete ? (
+            <>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Venator Aurum Starts August 8, 2025</h2>
+              <p className="text-lg text-gray-300 mb-6">
+                The CTF platforms will be available once the conference begins at 10:00 AM PST.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* CTFd Platform - Disabled */}
+                <Card className="bg-gray-900/50 border-gray-600/30 opacity-50">
+                  <CardHeader className="text-center pb-4">
+                    <Trophy className="w-12 h-12 text-gray-400 mx-auto mb-3" />
+                    <CardTitle className="text-xl text-gray-400">CTFd Platform</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-3">
+                    <p className="text-gray-400 text-sm">
+                      Register your team and submit flags to earn points. This is where you'll track your progress 
+                      and compete with other teams.
+                    </p>
+                    <Button disabled className="w-full bg-gray-600 text-gray-400 cursor-not-allowed text-sm">
+                      <Clock className="w-4 h-4 mr-2" />
+                      Available August 8, 2025
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </>
+          ) : (
+            <>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Project Obsidian is Live! 🚀</h2>
+              <p className="text-lg text-gray-300 mb-6">
+                The conference has begun! Head to the platforms below to start your incident response journey.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                {/* CTFd Platform - Active */}
+                <Card className="bg-gray-900/50 border-purple-500/30 hover:border-purple-400/50 transition-all duration-300">
+                  <CardHeader className="text-center pb-4">
+                    <Trophy className="w-12 h-12 text-purple-400 mx-auto mb-3" />
+                    <CardTitle className="text-xl text-purple-300">CTFd Platform</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-center space-y-3">
+                    <p className="text-gray-300 text-sm">
+                      Register your team and submit flags to earn points. This is where you'll track your progress 
+                      and compete with other teams.
+                    </p>
+                    <Link href="https://ctfd.dc33.blueteamvillage.org/" target="_blank" rel="noopener noreferrer">
+                      <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold text-sm">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Go to CTFd Platform
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/30 rounded-lg p-4">
+                <h3 className="text-lg font-semibold text-purple-300 mb-3">Getting Started</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-300">
+                  <div>
+                    <h4 className="font-semibold text-cyan-300 mb-1">Step 1: Register Your Team</h4>
+                    <p>Visit the CTFd platform to register your team and get access to the challenge categories.</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-green-300 mb-1">Step 2: Access Wazuh SIEM</h4>
+                    <p>Use the Wazuh platform to analyze logs and investigate the security incidents.</p>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+
       {/* Main Content Tabs */}
       <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-5 bg-gray-900/50 mb-8">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-cyan-500 text-gray-300 hover:text-white">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Overview
-              </TabsTrigger>
-              <TabsTrigger value="cryptography" className="data-[state=active]:bg-purple-500 text-gray-300 hover:text-white">
-                <Lock className="w-4 h-4 mr-2" />
-                Cryptography
-              </TabsTrigger>
-              <TabsTrigger value="codebreaking" className="data-[state=active]:bg-green-500 text-gray-300 hover:text-white">
-                <Code className="w-4 h-4 mr-2" />
-                Code Breaking
-              </TabsTrigger>
-              <TabsTrigger value="physical" className="data-[state=active]:bg-yellow-500 text-gray-300 hover:text-white">
-                <MapPin className="w-4 h-4 mr-2" />
-                Physical Security
-              </TabsTrigger>
-              <TabsTrigger value="labyrinth" className="data-[state=active]:bg-red-500 text-gray-300 hover:text-white">
-                <Eye className="w-4 h-4 mr-2" />
-                The Labyrinth
-              </TabsTrigger>
-            </TabsList>
+            {/* Mobile Dropdown */}
+            <div className="md:hidden mb-6">
+              <div className="relative">
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg p-4 flex items-center justify-between text-left"
+                >
+                  <div className="flex items-center">
+                    <BookOpen className="w-5 h-5 mr-3 text-gray-300" />
+                    <span className="text-gray-300 font-medium">Overview</span>
+                  </div>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
+                      isDropdownOpen ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+                
+                {isDropdownOpen && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-gray-900/95 border border-gray-700 rounded-lg shadow-lg z-50">
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300 rounded-t-lg"
+                    >
+                      <BookOpen className="w-5 h-5 mr-3" />
+                      <span className="font-medium">Overview</span>
+                      <Badge className="ml-auto bg-cyan-500/20 text-cyan-300 border-cyan-500/30 text-xs">Active</Badge>
+                    </button>
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300"
+                    >
+                      <Lock className="w-5 h-5 mr-3" />
+                      <span className="font-medium">Cryptography</span>
+                    </button>
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300"
+                    >
+                      <Code className="w-5 h-5 mr-3" />
+                      <span className="font-medium">Code Breaking</span>
+                    </button>
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300"
+                    >
+                      <MapPin className="w-5 h-5 mr-3" />
+                      <span className="font-medium">Physical Security</span>
+                    </button>
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300 rounded-b-lg"
+                    >
+                      <Eye className="w-5 h-5 mr-3" />
+                      <span className="font-medium">The Labyrinth</span>
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Desktop Tabs */}
+            <div className="hidden md:block">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 bg-gray-900/50 mb-8 gap-2">
+                <TabsTrigger value="overview" className="data-[state=active]:bg-cyan-500 text-gray-300 hover:text-white text-xs md:text-sm">
+                  <BookOpen className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  <span className="hidden sm:inline">Overview</span>
+                  <span className="sm:hidden">Overview</span>
+                </TabsTrigger>
+                <TabsTrigger value="cryptography" className="data-[state=active]:bg-purple-500 text-gray-300 hover:text-white text-xs md:text-sm">
+                  <Lock className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  <span className="hidden sm:inline">Cryptography</span>
+                  <span className="sm:hidden">Crypto</span>
+                </TabsTrigger>
+                <TabsTrigger value="codebreaking" className="data-[state=active]:bg-green-500 text-gray-300 hover:text-white text-xs md:text-sm">
+                  <Code className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  <span className="hidden sm:inline">Code Breaking</span>
+                  <span className="sm:hidden">Code</span>
+                </TabsTrigger>
+                <TabsTrigger value="physical" className="data-[state=active]:bg-yellow-500 text-gray-300 hover:text-white text-xs md:text-sm">
+                  <MapPin className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  <span className="hidden sm:inline">Physical Security</span>
+                  <span className="sm:hidden">Physical</span>
+                </TabsTrigger>
+                <TabsTrigger value="labyrinth" className="data-[state=active]:bg-red-500 text-gray-300 hover:text-white text-xs md:text-sm col-span-2 md:col-span-1">
+                  <Eye className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  <span className="hidden sm:inline">The Labyrinth</span>
+                  <span className="sm:hidden">Labyrinth</span>
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
             {/* Overview Tab */}
             <TabsContent value="overview">

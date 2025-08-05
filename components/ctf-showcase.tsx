@@ -88,7 +88,7 @@ const CTFCard = ({ ctf }: { ctf: CTFData }) => {
  * CTFShowcase Component
  * 
  * A reusable component for displaying CTF (Capture The Flag) challenges in a grid layout.
- * Supports both BTV CTFs and sponsored CTFs with customizable styling and data.
+ * Supports both BTV CTFs and Guest CTFs with customizable styling and data.
  * 
  * @example
  * ```tsx
@@ -192,13 +192,13 @@ export const btvCTFs: CTFData[] = [
   }
 ]
 
-export const sponsoredCTFs: CTFData[] = [
+export const guestCTFs: CTFData[] = [
   {
     id: "a-cyber-guru",
     title: "A Cyber Guru CTF",
     description: "The CTF is designed for cybersecurity professionals and blue teamers ready to challenge themselves in realistic, high-pressure scenarios.",
     icon: Trophy,
-    badge: "Sponsored",
+    badge: "Guest",
     badgeColor: "bg-red-500/20 text-red-300 border-red-500/30",
     borderColor: "border-red-500/30",
     buttonColor: "bg-red-500",
@@ -213,7 +213,7 @@ export const sponsoredCTFs: CTFData[] = [
     title: "Cyberbit Operation 33",
     description: "Two-day cyber defense challenge with 14 timed missions, live environments, and team tournament featuring full-scale investigations and championship finals.",
     icon: Shield,
-    badge: "Sponsored",
+    badge: "Guest",
     badgeColor: "bg-blue-500/20 text-blue-300 border-blue-500/30",
     borderColor: "border-blue-500/30",
     buttonColor: "bg-blue-500",

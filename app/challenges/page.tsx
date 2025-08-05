@@ -10,7 +10,7 @@ import {
   Star,
 } from "lucide-react"
 import { CountdownTimer } from "@/components/countdown-timer"
-import { CTFShowcase, btvCTFs, sponsoredCTFs } from "@/components/ctf-showcase"
+import { CTFShowcase, btvCTFs, guestCTFs } from "@/components/ctf-showcase"
 
 export default function ChallengesPage() {
   return (
@@ -36,7 +36,7 @@ export default function ChallengesPage() {
             </h1>
             <h2 className="text-2xl md:text-3xl font-semibold text-cyan-300 mb-6">Multiple Competitions, One Platform</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience a variety of cybersecurity challenges from sponsored competitions and Blue Team Village&apos;s own CTFs.
+              Experience a variety of cybersecurity challenges from Guest CTFs from our call for contests and Blue Team Village&apos;s own CTFs.
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function ChallengesPage() {
               Available CTFs
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose from our curated selection of sponsored competitions and Blue Team Village&apos;s signature CTFs.
+              Choose from our curated selection of Guest CTFs from our call for contests and Blue Team Village&apos;s signature CTFs.
             </p>
           </div>
 
@@ -85,13 +85,14 @@ export default function ChallengesPage() {
             ctfs={btvCTFs}
           />
 
-          {/* Sponsored CTFs */}
+          {/* Guest CTFs */}
           <CTFShowcase
-            title="Sponsored CTFs"
+            title="Guest CTFs"
+            subtitle="CTFs from our call for contests"
             icon={Star}
             iconColor="text-yellow-400"
             titleColor="text-yellow-300"
-            ctfs={sponsoredCTFs}
+            ctfs={guestCTFs}
           />
 
           {/* Information Section */}
@@ -112,9 +113,9 @@ export default function ChallengesPage() {
                 </ul>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-yellow-300 mb-2">Sponsored CTFs</h4>
+                <h4 className="text-lg font-semibold text-yellow-300 mb-2">Guest CTFs</h4>
                 <p className="text-gray-300 text-sm mb-4">
-                  Partner with leading cybersecurity companies and platforms to bring you diverse challenges 
+                  CTFs from our call for contests, bringing diverse challenges from the cybersecurity community 
                   covering various aspects of offensive and defensive security.
                 </p>
                 <ul className="space-y-1 text-sm text-gray-400">

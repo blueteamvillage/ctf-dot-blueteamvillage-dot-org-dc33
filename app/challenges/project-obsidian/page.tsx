@@ -202,33 +202,8 @@ export default function ProjectObsidianPage() {
       <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="overview" className="w-full">
+            {/* Kill Chain Tabs */}
             <KillChainTabs killChains={projectObsidianKillChains} />
-            {/* <TabsList className="grid w-full grid-cols-6 bg-gray-900/50 mb-8">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-purple-500 text-gray-300 hover:text-white">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Overview
-              </TabsTrigger>
-              <TabsTrigger value="killchain1" className="data-[state=active]:bg-red-500 text-gray-300 hover:text-white">
-                <Target className="w-4 h-4 mr-2" />
-                Kill Chain 1
-              </TabsTrigger>
-              <TabsTrigger value="killchain2" className="data-[state=active]:bg-orange-500 text-gray-300 hover:text-white">
-                <Target className="w-4 h-4 mr-2" />
-                Kill Chain 2
-              </TabsTrigger>
-              <TabsTrigger value="killchain3" className="data-[state=active]:bg-yellow-500 text-gray-300 hover:text-white">
-                <Target className="w-4 h-4 mr-2" />
-                Kill Chain 3
-              </TabsTrigger>
-              <TabsTrigger value="killchain4" className="data-[state=active]:bg-green-500 text-gray-300 hover:text-white">
-                <Target className="w-4 h-4 mr-2" />
-                Kill Chain 4
-              </TabsTrigger>
-              <TabsTrigger value="killchain5" className="data-[state=active]:bg-blue-500 text-gray-300 hover:text-white">
-                <Target className="w-4 h-4 mr-2" />
-                Kill Chain 5
-              </TabsTrigger>
-            </TabsList> */}
 
             {/* Overview Tab */}
             <TabsContent value="overview">

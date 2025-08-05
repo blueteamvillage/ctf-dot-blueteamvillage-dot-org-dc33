@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -16,9 +19,12 @@ import {
   AlertTriangle,
   Activity,
   Server,
+  ChevronDown,
 } from "lucide-react"
 
 export default function ACyberGuruPage() {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  
   return (
     <div className="min-h-screen bg-black text-white">
       <Header />
@@ -76,24 +82,83 @@ export default function ACyberGuruPage() {
       <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 bg-gray-900/50 mb-8">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-red-500 text-gray-300 hover:text-white">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Overview
-              </TabsTrigger>
-              <TabsTrigger value="investigations" className="data-[state=active]:bg-orange-500 text-gray-300 hover:text-white">
-                <Target className="w-4 h-4 mr-2" />
-                Investigations
-              </TabsTrigger>
-              <TabsTrigger value="soc" className="data-[state=active]:bg-yellow-500 text-gray-300 hover:text-white">
-                <Activity className="w-4 h-4 mr-2" />
-                SOC Challenges
-              </TabsTrigger>
-              <TabsTrigger value="resources" className="data-[state=active]:bg-green-500 text-gray-300 hover:text-white">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Resources
-              </TabsTrigger>
-            </TabsList>
+            {/* Mobile Dropdown */}
+            <div className="md:hidden mb-6">
+              <div className="relative">
+                <button
+                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  className="w-full bg-gray-900/50 border border-gray-700 rounded-lg p-4 flex items-center justify-between text-left"
+                >
+                  <div className="flex items-center">
+                    <BookOpen className="w-5 h-5 mr-3 text-gray-300" />
+                    <span className="text-gray-300 font-medium">Overview</span>
+                  </div>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
+                      isDropdownOpen ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+                
+                {isDropdownOpen && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-gray-900/95 border border-gray-700 rounded-lg shadow-lg z-50">
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300 rounded-t-lg"
+                    >
+                      <BookOpen className="w-5 h-5 mr-3" />
+                      <span className="font-medium">Overview</span>
+                      <Badge className="ml-auto bg-red-500/20 text-red-300 border-red-500/30 text-xs">Active</Badge>
+                    </button>
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300"
+                    >
+                      <Target className="w-5 h-5 mr-3" />
+                      <span className="font-medium">Investigations</span>
+                    </button>
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300"
+                    >
+                      <Activity className="w-5 h-5 mr-3" />
+                      <span className="font-medium">SOC Challenges</span>
+                    </button>
+                    <button
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="w-full p-4 flex items-center text-left hover:bg-gray-800/50 transition-colors text-gray-300 rounded-b-lg"
+                    >
+                      <BookOpen className="w-5 h-5 mr-3" />
+                      <span className="font-medium">Resources</span>
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Desktop Tabs */}
+            <div className="hidden md:block">
+              <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 bg-gray-900/50 mb-8 gap-2">
+                <TabsTrigger value="overview" className="data-[state=active]:bg-red-500 text-gray-300 hover:text-white text-xs md:text-sm">
+                  <BookOpen className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  Overview
+                </TabsTrigger>
+                <TabsTrigger value="investigations" className="data-[state=active]:bg-orange-500 text-gray-300 hover:text-white text-xs md:text-sm">
+                  <Target className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  <span className="hidden sm:inline">Investigations</span>
+                  <span className="sm:hidden">Invest</span>
+                </TabsTrigger>
+                <TabsTrigger value="soc" className="data-[state=active]:bg-yellow-500 text-gray-300 hover:text-white text-xs md:text-sm">
+                  <Activity className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  <span className="hidden sm:inline">SOC Challenges</span>
+                  <span className="sm:hidden">SOC</span>
+                </TabsTrigger>
+                <TabsTrigger value="resources" className="data-[state=active]:bg-green-500 text-gray-300 hover:text-white text-xs md:text-sm">
+                  <BookOpen className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                  Resources
+                </TabsTrigger>
+              </TabsList>
+            </div>
 
             {/* Overview Tab */}
             <TabsContent value="overview">

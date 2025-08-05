@@ -4,7 +4,7 @@ import { EventDetails } from "@/components/event-details"
 import { Rules } from "@/components/rules"
 import { Sponsors } from "@/components/sponsors"
 import { Footer } from "@/components/footer"
-import { CTFShowcase, btvCTFs, sponsoredCTFs } from "@/components/ctf-showcase"
+import { CTFShowcase, btvCTFs, guestCTFs } from "@/components/ctf-showcase"
 import { Building, Star } from "lucide-react"
 
 export default function HomePage() {
@@ -22,7 +22,7 @@ export default function HomePage() {
               Available CTFs
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose from our curated selection of sponsored competitions and Blue Team Village&apos;s signature CTFs.
+              Choose from our curated selection of Guest CTFs from our call for contests and Blue Team Village&apos;s signature CTFs.
             </p>
           </div>
 
@@ -35,11 +35,12 @@ export default function HomePage() {
           />
 
           <CTFShowcase
-            title="Sponsored CTFs"
+            title="Guest CTFs"
+            subtitle="CTFs from our call for contests"
             icon={Star}
             iconColor="text-yellow-400"
             titleColor="text-yellow-300"
-            ctfs={sponsoredCTFs}
+            ctfs={guestCTFs}
           />
         </div>
       </section>
