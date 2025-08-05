@@ -202,7 +202,8 @@ export default function ProjectObsidianPage() {
       <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="overview" className="w-full">
-            <TabsList className="grid w-full grid-cols-6 bg-gray-900/50 mb-8">
+            <KillChainTabs killChains={projectObsidianKillChains} />
+            {/* <TabsList className="grid w-full grid-cols-6 bg-gray-900/50 mb-8">
               <TabsTrigger value="overview" className="data-[state=active]:bg-purple-500 text-gray-300 hover:text-white">
                 <BookOpen className="w-4 h-4 mr-2" />
                 Overview
@@ -227,7 +228,7 @@ export default function ProjectObsidianPage() {
                 <Target className="w-4 h-4 mr-2" />
                 Kill Chain 5
               </TabsTrigger>
-            </TabsList>
+            </TabsList> */}
 
             {/* Overview Tab */}
             <TabsContent value="overview">
@@ -362,9 +363,6 @@ export default function ProjectObsidianPage() {
                 </div>
               </div>
             </TabsContent>
-
-            {/* Kill Chain Tabs */}
-            <KillChainTabs killChains={projectObsidianKillChains} />
           </Tabs>
         </div>
       </section>

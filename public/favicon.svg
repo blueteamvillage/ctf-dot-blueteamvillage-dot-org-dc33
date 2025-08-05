@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .btv-main { fill: #0081ff; }
+      .btv-accent { fill: #0066cc; }
+      .btv-text { fill: white; }
+    </style>
+  </defs>
+  
+  <!-- Main shield shape based on BTV logo -->
+  <path class="btv-main" d="M16 2L6 6v6c0 6 3.5 11 10 13 6.5-2 10-7 10-13V6L16 2z"/>
+  
+  <!-- Inner accent elements -->
+  <path class="btv-accent" d="M16 4L8 7v5c0 4 2.5 8 8 10 5.5-2 8-6 8-10V7L16 4z"/>
+  
+  <!-- BTV text -->
+  <text x="16" y="20" class="btv-text" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="8">BTV</text>
+</svg> 

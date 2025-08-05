@@ -53,7 +53,7 @@ export function KillChainTabs({ killChains, className = "" }: KillChainTabsProps
           <Card className={`bg-gray-900/50 border-${chain.color}-500/30`}>
             <CardHeader>
               <CardTitle className={`text-3xl font-bold text-${chain.color}-300`}>
-                {chain.title}
+                {chain.id === "killchain5" ? "Digital Breadcrumbs and Village Voyages" : chain.title}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -197,7 +197,7 @@ export const projectObsidianKillChains: KillChainData[] = [
   },
   {
     id: "killchain5",
-    title: "Digital Breadcrumbs and Village Voyages",
+    title: "Kill Chain #5",
     description: "Kill Chain #5 takes players on a journey across multiple village domains, challenging them to uncover user behaviors, downloaded files, browser artifacts, and security community trivia—all while stitching together clues from file servers, local activity, and curiosity-fueled internet footprints.",
     color: "blue",
     focusAreas: [

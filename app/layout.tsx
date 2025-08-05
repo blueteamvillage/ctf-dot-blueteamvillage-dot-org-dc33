@@ -16,6 +16,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Blue Team Village CTF",
   description: "Blue Team Village's premier cybersecurity competition at DEF CON 33.",
+  icons: {
+    icon: [
+      { url: '/favicon-detailed.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon-detailed.svg',
+    apple: '/favicon-detailed.svg',
+  },
 };
 
 export default function RootLayout({
