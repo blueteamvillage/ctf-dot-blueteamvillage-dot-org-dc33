@@ -79,17 +79,9 @@ export function Hero() {
           <Button
             size="lg"
             disabled={!isCountdownComplete}
-            className={`font-bold px-12 py-4 rounded-lg transition-all duration-300 transform text-lg shadow-lg ${
-              isCountdownComplete
-                ? "bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white hover:scale-110"
-                : "bg-gray-600 text-gray-400 cursor-not-allowed opacity-50"
-            }`}
+            className={`font-bold px-12 py-4 rounded-lg transition-all duration-300 transform text-lg shadow-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white hover:scale-110`}
           >
-            {isCountdownComplete ? (
-              <Link href="https://ctfd.dc33.blueteamvillage.org/register">Register Now</Link>
-            ) : (
-              "Registration Opens Soon"
-            )}
+            <Link href="https://ctfd.dc33.blueteamvillage.org/register">Register Now</Link>
           </Button>
           {/* <Button
             size="lg"
