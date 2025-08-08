@@ -182,13 +182,17 @@ export default function ProjectObsidianPage() {
               <div className="bg-gradient-to-r from-purple-500/10 to-cyan-500/10 border border-purple-500/30 rounded-lg p-4">
                 <h3 className="text-lg font-semibold text-purple-300 mb-3">Getting Started</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-gray-300">
-                  <div>
-                    <h4 className="font-semibold text-cyan-300 mb-1">Step 1: Register Your Team</h4>
-                    <p>Visit the CTFd platform to register your team and get access to the challenge categories.</p>
+                    <div>
+                      <Link href="https://ctfd.dc33.blueteamvillage.org/register">
+                        <h4 className="font-semibold text-cyan-300 mb-1">Step 1: Register Your Team</h4>
+                        <p>Visit the CTFd platform to register your team and get access to the challenge categories.</p>
+                      </Link>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-green-300 mb-1">Step 2: Access Wazuh SIEM</h4>
-                    <p>Use the Wazuh platform to analyze logs and investigate the security incidents.</p>
+                    <div>
+                      <Link href="https://wazuh.dc33.blueteamvillage.org/">
+                        <h4 className="font-semibold text-green-300 mb-1">Step 2: Access Wazuh SIEM</h4>
+                        <p>Use the Wazuh platform to analyze logs and investigate the security incidents.</p>
+                      </Link>
                   </div>
                 </div>
               </div>
@@ -290,7 +294,7 @@ export default function ProjectObsidianPage() {
                           href="https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/index.html" 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-sm text-cyan-400 hover:text-cyan-300 underline"
+                          className="text-sm text-cyan-400 hover:text-cyan-300 underline break-all hover:break-words"
                         >
                           https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/index.html
                         </a>

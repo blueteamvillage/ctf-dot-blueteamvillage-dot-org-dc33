@@ -1,5 +1,6 @@
-import { Github, Twitter, ExternalLink, Linkedin } from "lucide-react"
+import { Github, Twitter, ExternalLink, Linkedin, Link } from "lucide-react"
 import Image from "next/image"
+import NextLink from "next/link"
 
 export function Footer() {
   return (
@@ -8,13 +9,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <Image
-                src="/obsidian.png"
-                alt="Project Obsidian Logo"
-                width={40}
-                height={40}
-                className="rounded-lg"
-              />
+              <NextLink href="/">
+                <Image
+                  src="/obsidian.png"
+                  alt="Project Obsidian Logo"
+                  width={40}
+                  height={40}
+                  className="rounded-lg"
+                />
+              </NextLink>
               <h3 className="text-xl font-bold text-cyan-300">BTV CTF</h3>
             </div>
             <p className="text-gray-400 text-sm mb-4">
@@ -90,15 +93,16 @@ export function Footer() {
 
           {/* Blue Team Village Logo */}
           <div className="flex justify-center mb-6">
-            <Image
-              src="/btv-logo.png"
-              alt="Blue Team Village Logo"
-              width={160}
-              height={160}
-              className="opacity-80 hover:opacity-100 transition-opacity"
-            />
+            <a href="/">
+              <Image
+                src="/btv-logo.png"
+                alt="Blue Team Village Logo"
+                width={160}
+                height={160}
+                className="opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </a>
           </div>
-
 
           {/* <div>
             <h4 className="text-lg font-semibold text-white mb-4">Contact</h4>

@@ -80,13 +80,13 @@ export function Hero() {
           >
             <Link href="https://ctfd.dc33.blueteamvillage.org/register">Register Now</Link>
           </Button>
-          {/* <Button
-            size="lg"
-            className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
-          >
-            <Link href="/challenges">View Challenges</Link>
-          </Button>
           <Button
+            size="lg"
+            className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-lg shadow-lg"
+          >
+            <Link href="/challenges">Getting Started</Link>
+          </Button>
+          {/* <Button
             size="lg"
             variant="outline"
             className="border-cyan-400 text-cyan-400 hover:bg-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 bg-transparent"
