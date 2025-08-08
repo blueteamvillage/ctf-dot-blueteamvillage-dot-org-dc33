@@ -9,7 +9,6 @@ import {
   Building,
   Star,
 } from "lucide-react"
-import { CountdownTimer } from "@/components/countdown-timer"
 import { CTFShowcase, btvCTFs, guestCTFs } from "@/components/ctf-showcase"
 
 export default function ChallengesPage() {
@@ -58,9 +57,6 @@ export default function ChallengesPage() {
               <p className="text-sm text-gray-300">Various Durations</p>
             </div>
           </div>
-
-          {/* Countdown Timer */}
-          <CountdownTimer />
         </div>
       </section>
 
