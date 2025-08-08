@@ -75,7 +75,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row justify-center gap-8">
           <Button
             size="lg"
-            disabled=false
+            disabled={false}
             className={`font-bold px-12 py-4 rounded-lg transition-all duration-300 transform text-lg shadow-lg bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white hover:scale-110`}
           >
             <Link href="https://ctfd.dc33.blueteamvillage.org/register">Register Now</Link>
