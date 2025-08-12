@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { DefconWinnersCard } from "@/components/defcon-winners-card"
 
 export default function PastWinnersPage() {
   return (
@@ -36,8 +37,8 @@ export default function PastWinnersPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-3xl font-bold text-white">457</div>
-                <p className="text-gray-400 text-sm">Across DEF CON 31 & 32</p>
+                <div className="text-3xl font-bold text-white">850</div>
+                <p className="text-gray-400 text-sm">Across DEF CON 31, 32, & 33</p>
               </CardContent>
             </Card>
 
@@ -49,7 +50,7 @@ export default function PastWinnersPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-3xl font-bold text-white">244</div>
+                <div className="text-3xl font-bold text-white">473</div>
                 <p className="text-gray-400 text-sm">From solo to 4-person teams</p>
               </CardContent>
             </Card>
@@ -62,7 +63,7 @@ export default function PastWinnersPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
-                <div className="text-3xl font-bold text-white">6</div>
+                <div className="text-3xl font-bold text-white">9</div>
                 <p className="text-gray-400 text-sm">Top 3 teams each year</p>
               </CardContent>
             </Card>
@@ -73,111 +74,78 @@ export default function PastWinnersPage() {
       {/* Winners Grid */}
       <div className="max-w-6xl mx-auto px-4 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* DEF CON 31 */}
-          <Card className="bg-gray-900/50 border-gray-700 hover:border-cyan-500/30 transition-colors">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-2xl font-bold text-cyan-300">DEF CON 31</CardTitle>
-                <Badge className="bg-blue-500/20 text-blue-300 border-blue-500/30">
-                  <Calendar className="w-3 h-3 mr-1" />
-                  2023
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {/* 1st Place */}
-              <div className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-yellow-300">🥇 1st Place</h3>
-                  <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30">Champions</Badge>
-                </div>
-                <div className="text-white font-semibold">GhidraGoons</div>
-                <div className="text-gray-400 text-sm mt-1">
-                  obnoxious_goat, _marctheshark_, so1arf1ar3z, eddo
-                </div>
-              </div>
-
-              {/* 2nd Place */}
-              <div className="bg-gradient-to-r from-gray-500/10 to-gray-600/10 border border-gray-500/30 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-gray-300">🥈 2nd Place</h3>
-                  <Badge className="bg-gray-500/20 text-gray-300 border-gray-500/30">Runner-up</Badge>
-                </div>
-                <div className="text-white font-semibold">AMBUSH</div>
-              </div>
-
-              {/* 3rd Place */}
-              <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/30 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-orange-300">🥉 3rd Place</h3>
-                  <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30">Third</Badge>
-                </div>
-                <div className="text-white font-semibold">TheCancelledCrewxXqc</div>
-              </div>
-
-              <Link 
-                href="/past-winners/defcon-31" 
-                className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
-              >
-                View Full Results
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </CardContent>
-          </Card>
-
+          {/* DEF CON 33 */}
+          <DefconWinnersCard
+            year={2025}
+            defconNumber={33}
+            themeColor="orange"
+            linkHref="/past-winners/defcon-33"
+            winners={[
+              {
+                place: 1,
+                teamName: "GhidraGoons",
+                displayName: "GhidraGoons",
+                points: 39057,
+                usernames: ["almanac-problem", "BorrowedMilk", "null", "So1ArF1Ar3"]
+              },
+              {
+                place: 2,
+                teamName: "0x325",
+                points: 30957,
+                usernames: ["0x325-owl", "mando", "Rooster", "Samba"]
+              },
+              {
+                place: 3,
+                teamName: "SISC",
+                points: 30952,
+                usernames: ["Go5", "hwPark", "sh3rlock", "shw"]
+              }
+            ]}
+          />
           {/* DEF CON 32 */}
-          <Card className="bg-gray-900/50 border-gray-700 hover:border-purple-500/30 transition-colors">
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <CardTitle className="text-2xl font-bold text-purple-300">DEF CON 32</CardTitle>
-                <Badge className="bg-purple-500/20 text-purple-300 border-purple-500/30">
-                  <Calendar className="w-3 h-3 mr-1" />
-                  2024
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {/* 1st Place */}
-              <div className="bg-gradient-to-r from-yellow-500/10 to-yellow-600/10 border border-yellow-500/30 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-yellow-300">🥇 1st Place</h3>
-                  <Badge className="bg-yellow-500/20 text-yellow-300 border-yellow-500/30">Champions</Badge>
-                </div>
-                <div className="text-white font-semibold">Def con dans mison</div>
-                <div className="text-gray-400 text-sm mt-1">GhidraGoons</div>
-              </div>
-
-              {/* 2nd Place */}
-              <div className="bg-gradient-to-r from-gray-500/10 to-gray-600/10 border border-gray-500/30 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-gray-300">🥈 2nd Place</h3>
-                  <Badge className="bg-gray-500/20 text-gray-300 border-gray-500/30">Runner-up</Badge>
-                </div>
-                <div className="text-white font-semibold">N1t3_Tr@1n</div>
-              </div>
-
-              {/* 3rd Place */}
-              <div className="bg-gradient-to-r from-orange-500/10 to-orange-600/10 border border-orange-500/30 rounded-lg p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-semibold text-orange-300">🥉 3rd Place</h3>
-                  <Badge className="bg-orange-500/20 text-orange-300 border-orange-500/30">Third</Badge>
-                </div>
-                <div className="text-white font-semibold">Slept4Day</div>
-              </div>
-
-              <Link 
-                href="/past-winners/defcon-32" 
-                className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
-              >
-                View Full Results
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </CardContent>
-          </Card>
+          <DefconWinnersCard
+            year={2024}
+            defconNumber={32}
+            themeColor="purple"
+            linkHref="/past-winners/defcon-32"
+            winners={[
+              {
+                place: 1,
+                teamName: "GhidraGoons",
+                displayName: "Def con dans mison"
+              },
+              {
+                place: 2,
+                teamName: "N1t3_Tr@1n"
+              },
+              {
+                place: 3,
+                teamName: "Slept4Day"
+              }
+            ]}
+          />
+          {/* DEF CON 31 */}
+          <DefconWinnersCard
+            year={2023}
+            defconNumber={31}
+            themeColor="cyan"
+            linkHref="/past-winners/defcon-31"
+            winners={[
+              {
+                place: 1,
+                teamName: "GhidraGoons",
+                members: "obnoxious_goat, _marctheshark_, so1arf1ar3z, eddo"
+              },
+              {
+                place: 2,
+                teamName: "AMBUSH"
+              },
+              {
+                place: 3,
+                teamName: "TheCancelledCrewxXqc"
+              }
+            ]}
+          />
         </div>
 
         {/* Call to Action */}
@@ -204,6 +172,7 @@ export default function PastWinnersPage() {
           </div>
         </div> */}
       </div>
+
       <Footer />
     </div>
   )

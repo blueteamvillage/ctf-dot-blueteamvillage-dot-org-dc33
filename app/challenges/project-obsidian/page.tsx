@@ -149,12 +149,10 @@ export default function ProjectObsidianPage() {
                       Register your team and submit flags to earn points. This is where you'll track your progress 
                       and compete with other teams.
                     </p>
-                    <Link href="https://ctfd.dc33.blueteamvillage.org/" target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold text-sm">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Go to CTFd Platform
-                      </Button>
-                    </Link>
+                    <Button disabled className="w-full bg-gray-500 text-gray-300 cursor-not-allowed font-semibold text-sm">
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      CTFd Platform (Closed)
+                    </Button>
                   </CardContent>
                 </Card>
 
@@ -169,12 +167,10 @@ export default function ProjectObsidianPage() {
                       Access the Security Information and Event Management platform to analyze logs, 
                       investigate incidents, and find clues to solve the challenges.
                     </p>
-                    <Link href="https://wazuh.dc33.blueteamvillage.org/" target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-semibold text-sm">
+                      <Button disabled className="w-full bg-gray-500 text-gray-300 cursor-not-allowed font-semibold text-sm">
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        Go to Wazuh SIEM
+                        Wazuh SIEM (Closed)
                       </Button>
-                    </Link>
                   </CardContent>
                 </Card>
               </div>

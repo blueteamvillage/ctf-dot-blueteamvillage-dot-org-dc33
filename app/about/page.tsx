@@ -21,7 +21,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-24 pb-12 px-4 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
+      <section className="pt-20 pb-12 px-4 bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse" />
 
@@ -30,8 +30,8 @@ export default function AboutPage() {
         <div className="absolute bottom-20 left-20 w-40 h-40 bg-purple-500/20 rounded-full blur-xl animate-pulse delay-1000" />
 
         <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <div className="mb-8">
-            <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30 mb-4">
+          <div className="mb-6">
+            <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-500/30 mb-4 inline-block">
               About Blue Team Village
             </Badge>
             <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-400 to-green-400 bg-clip-text text-transparent">

@@ -121,7 +121,7 @@ export default function VenatorAurumPage() {
             </>
           ) : (
             <>
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Project Obsidian is Live! 🚀</h2>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Venator Aurum is Live! 🚀</h2>
               <p className="text-lg text-gray-300 mb-6">
                 The conference has begun! Head to the platforms below to start your incident response journey.
               </p>
@@ -138,12 +138,13 @@ export default function VenatorAurumPage() {
                       Register your team and submit flags to earn points. This is where you'll track your progress 
                       and compete with other teams.
                     </p>
-                    <Link href="https://ctfd.dc33.blueteamvillage.org/" target="_blank" rel="noopener noreferrer">
-                      <Button className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold text-sm">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Go to CTFd Platform
-                      </Button>
-                    </Link>
+                    <Button 
+                      disabled 
+                      className="w-full bg-gray-500 text-gray-300 cursor-not-allowed font-semibold text-sm"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      CTFd Platform (Closed)
+                    </Button>
                   </CardContent>
                 </Card>
               </div>
