@@ -161,18 +161,18 @@ export default function Defcon33Page() {
                       { name: "GhidraGoons", points: 39057 },
                       { name: "0x325", points: 30957 },
                       { name: "SISC", points: 30952 },
-                      { name: "AKATSUKI", points: 28950 },
-                      { name: "dimasiados", points: 27500 },
-                      { name: "Blue Team of Death", points: 26800 },
-                      { name: "CyberNinjas", points: 25900 },
-                      { name: "HackThePlanet", points: 24800 },
-                      { name: "SecureSquad", points: 23900 },
-                      { name: "DefendAll", points: 22800 },
-                      { name: "GuardianForce", points: 21700 },
-                      { name: "ShieldMasters", points: 20600 },
-                      { name: "SecureCore", points: 19500 },
-                      { name: "DefenseElite", points: 18400 },
-                      { name: "BlueGuard", points: 17300 }
+                      { name: "Ctrl+Alt+DEFEAT", points: 22117 },
+                      { name: "Couch Pounders", points: 17357 },
+                      { name: "thisisapen", points: 16587 },
+                      { name: "No wifi at the armory", points: 15802 },
+                      { name: "P0shPh1sh", points: 15157 },
+                      { name: "WeAre18gi0n", points: 14437 },
+                      { name: "KirklandSignaturePwnys", points: 14357 },
+                      { name: "T97", points: 11932 },
+                      { name: "ntwk_defeders", points: 10507 },
+                      { name: "alohaX", points: 10357 },
+                      { name: "G3tt1nPhr34ky", points: 10205 },
+                      { name: "inSIRT Name Here", points: 9007 }
                     ].map((team, index) => (
                       <div key={index} className="flex justify-between pt-1">
                         <span className="text-gray-300">
@@ -190,36 +190,6 @@ export default function Defcon33Page() {
             </div>
           </CardContent>
         </Card>
-
-        {/* Technical Infrastructure */}
-        {/* <Card className="bg-gray-900/50 border-gray-700 mb-8">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-cyan-300 flex items-center">
-              <Database className="w-6 h-6 mr-2" />
-              Technical Infrastructure
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Keycloak Setup</h3>
-                <ul className="text-gray-300 space-y-2">
-                  <li>• 4 Pod Stateful Set hosted in Kubernetes</li>
-                  <li>• Connected to Okta SSO</li>
-                  <li>• High-performance log processing</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-white mb-3">Multi-Juicer Setup</h3>
-                <ul className="text-gray-300 space-y-2">
-                  <li>• 30 Nodes (m5.xlarge) on Elastic Kubernetes Service (EKS)</li>
-                  <li>• 10 Juice Balancers (Load Balancers)</li>
-                  <li>• Supports up to 300 instances with 30 nodes</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card> */}
 
         {/* Competition Highlights */}
         <Card className="bg-gray-900/50 border-gray-700 mb-8">
