@@ -126,22 +126,22 @@ export default function Defcon33Page() {
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-gray-300">1-person teams:</span>
-                        <span className="text-white font-bold">130 teams</span>
+                        <span className="text-white font-bold">131 teams</span>
                       </div>
                       
                       <div className="flex justify-between">
                         <span className="text-gray-300">2-person teams:</span>
-                        <span className="text-white font-bold">29 teams</span>
+                        <span className="text-white font-bold">37 teams</span>
                       </div>
                       
                       <div className="flex justify-between">
                         <span className="text-gray-300">3-person teams:</span>
-                        <span className="text-white font-bold">21 teams</span>
+                        <span className="text-white font-bold">23 teams</span>
                       </div>
                       
                       <div className="flex justify-between">
                         <span className="text-gray-300">4-person teams:</span>
-                        <span className="text-white font-bold">16 teams</span>
+                        <span className="text-white font-bold">19 teams</span>
                       </div>
                     </div>
                   </div>
