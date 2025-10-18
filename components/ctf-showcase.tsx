@@ -222,5 +222,20 @@ export const guestCTFs: CTFData[] = [
     level: "Advanced",
     challenges: "14 Missions",
     href: "/challenges/cyberbit"
+  },
+  {
+    id: "ekoparty-2025-bluespace",
+    title: "Ekoparty 2025 - Bluespace",
+    description: "Our flagship incident response CTF featuring realistic security scenarios, digital forensics challenges, and comprehensive kill chain investigations.",
+    icon: Shield,
+    badge: "Guest",
+    badgeColor: "bg-cyan-500/20 text-cyan-300 border-cyan-500/30",
+    borderColor: "border-cyan-500/30",
+    buttonColor: "bg-cyan-500",
+    duration: "Self-Paced",
+    teamSize: "1-4 Members",
+    level: "Intermediate",
+    challenges: "Wazuh Setup",
+    href: "/challenges/ekoparty-2025-bluespace"
   }
 ] 
