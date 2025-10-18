@@ -419,7 +419,7 @@ docker compose ps`}
                 onClick={() => copyToClipboard(
                   `curl -L -o wazuh-backup-20251017-170221.tar.gz \\
 	--progress-bar \\
-	https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/DC33/CTF-OBSIDIAN/DOCKER_VOLUMES/wazuh-backup-20251017-170221.tar.gz
+	https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/DC33/CTF-OBSIDIAN/DOCKER_VOLUMES/wazuh-backup-20251017-192456.tar.gz
 
 tar -xzvf wazuh-backup-20251017-170221.tar.gz
 
