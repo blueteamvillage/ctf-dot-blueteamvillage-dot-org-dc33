@@ -21,6 +21,17 @@ interface TabData {
   description: string
 }
 
+interface EkopartyData {
+  id: string
+  title: string
+  description: string
+  color: string
+  focusAreas: string[]
+  challenges: string[]
+  skillsDeveloped: string[]
+}
+
+
 interface EkopartyTabsProps {
   children: React.ReactNode
   className?: string
@@ -494,3 +505,103 @@ cd wazuh-backup-20251017-192456/
     </div>
   )
 }
+
+// Predefined kill chain data for Project Obsidian
+export const ekoPartyKillChains: EkopartyData[] = [
+  {
+    id: "killchain1",
+    title: "Kill Chain 1",
+    description: "Uncover an adversary's full compromise of multiple Windows workstations. Investigate the adversary's activities from reconnaissance to credential theft, persistence, and privilege escalation while defenders trace their steps through forensic artifacts, browser activity, and Active Directory abuse.",
+    color: "red",
+    focusAreas: [
+      "Windows forensics",
+      "Browser artifact analysis", 
+      "Active Directory investigation",
+      "Credential theft detection"
+    ],
+    challenges: [
+      "25+ challenges",
+      "Progressive difficulty",
+      "Real-world scenarios",
+      "Hands-on practice"
+    ],
+    skillsDeveloped: [
+      "Incident response",
+      "Digital forensics",
+      "Threat hunting",
+      "Analysis techniques"
+    ]
+  },
+  {
+    id: "killchain2",
+    title: "Kill Chain 2", 
+    description: "Track a remote access trojan (RAT) enabled social engineering attack, uses phishing, RMM tools, and AD recon to compromise a user and explore lateral movement.",
+    color: "orange",
+    focusAreas: [
+      "RAT analysis",
+      "Social engineering detection",
+      "Phishing investigation", 
+      "Lateral movement tracking"
+    ],
+    challenges: [
+      "20+ challenges",
+      "Network analysis",
+      "Malware reverse engineering",
+      "Behavioral analysis"
+    ],
+    skillsDeveloped: [
+      "Malware analysis",
+      "Network forensics",
+      "Threat intelligence",
+      "Incident containment"
+    ]
+  },
+  {
+    id: "killchain3",
+    title: "Kill Chain 3",
+    description: "Challenges players to investigate a web application attack targeting a vulnerable web application, where the adversary exploits vulnerabilities, all while evading detection across proxy headers and misaligned logs.",
+    color: "yellow",
+    focusAreas: [
+      "Web application security",
+      "Log analysis",
+      "Proxy investigation",
+      "Vulnerability assessment"
+    ],
+    challenges: [
+      "15+ challenges",
+      "Web exploitation",
+      "Detection evasion",
+      "Advanced persistence"
+    ],
+    skillsDeveloped: [
+      "Web security",
+      "Log correlation",
+      "Attack detection",
+      "Security monitoring"
+    ]
+  },
+  {
+    id: "killchain4",
+    title: "Kill Chain 4",
+    description: "Follows a convincing phishing attack that tricks a corporate employee into opening a malicious attachment, triggering macro-based malware, persistence via scheduled tasks, DNS tunneling, and stealthy exfiltration. Challenging defenders to trace every log cleared, service modified, and file exfiltrated in the wake of the compromise.",
+    color: "green",
+    focusAreas: [
+      "Phishing investigation",
+      "Macro malware analysis",
+      "DNS tunneling detection",
+      "Data exfiltration tracking"
+    ],
+    challenges: [
+      "16+ challenges",
+      "Advanced persistence",
+      "Covert communication",
+      "Evidence preservation"
+    ],
+    skillsDeveloped: [
+      "Advanced forensics",
+      "Threat hunting",
+      "Incident response",
+      "Evidence analysis"
+    ]
+  }
+] 

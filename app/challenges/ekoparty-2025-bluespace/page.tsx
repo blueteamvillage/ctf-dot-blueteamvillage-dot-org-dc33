@@ -5,7 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { EkopartyTabs, OverviewContent, InstallationSteps } from "@/components/ekoparty-tabs"
+import { ekoPartyKillChains, OverviewContent, InstallationSteps } from "@/components/ekoparty-tabs"
 import { KillChainTabs, projectObsidianKillChains } from "@/components/kill-chain-tabs"
 import {
   Shield,
@@ -76,7 +76,7 @@ export default function EkopartyBluespacePage() {
       <section className="py-16 px-4 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto">
           {/* Kill Chain Tabs */}
-          <KillChainTabs killChains={projectObsidianKillChains} />
+          <KillChainTabs killChains={ekoPartyKillChains} />
 
           {/* Introduction */}
           <Card className="bg-gray-900/50 border-blue-500/30 mb-16">
