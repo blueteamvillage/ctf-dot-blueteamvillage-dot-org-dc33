@@ -428,11 +428,11 @@ docker compose ps`}
                 size="sm"
                 variant="outline"
                 onClick={() => copyToClipboard(
-                  `curl -L -o wazuh-backup-20251017-170221.tar.gz \\
+                  `curl -L -o wazuh-backup-20251017-192456.tar.gz \\
 	--progress-bar \\
 	https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/DC33/CTF-OBSIDIAN/DOCKER_VOLUMES/wazuh-backup-20251017-192456.tar.gz
 
-tar -xzvf wazuh-backup-20251017-170221.tar.gz
+tar -xzvf wazuh-backup-20251017-192456.tar.gz
 
 cd wazuh-backup-20251017-192456/
 
@@ -445,11 +445,11 @@ cd wazuh-backup-20251017-192456/
               </Button>
             </div>
             <pre className="text-xs text-gray-300 overflow-x-auto">
-{`curl -L -o wazuh-backup-20251017-170221.tar.gz \\
+{`curl -L -o wazuh-backup-20251017-192456.tar.gz \\
 	--progress-bar \\
-	https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/DC33/CTF-OBSIDIAN/DOCKER_VOLUMES/wazuh-backup-20251017-170221.tar.gz
+	https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/DC33/CTF-OBSIDIAN/DOCKER_VOLUMES/wazuh-backup-20251017-192456.tar.gz
 
-tar -xzvf wazuh-backup-20251017-170221.tar.gz
+tar -xzvf wazuh-backup-20251017-192456.tar.gz
 
 cd wazuh-backup-20251017-192456/
 
