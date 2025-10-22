@@ -189,15 +189,25 @@ export function InstallationSteps() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-3">System Requirements</h3>
             <ul className="space-y-2 text-gray-300">
+              <li>• Windows: 10 or later</li>
               <li>• macOS: 12.0 (Monterey) or later</li>
               <li>• RAM: Minimum 8GB, Recommended 12GB+</li>
               <li>• Storage: 100GB+ free space</li>
-              <li>• Architecture: Apple Silicon (M1/M2/M3)</li>
+              <li>• Architecture: Apple Silicon (M1/M2/M3) or x86_64</li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white mb-3">Required Software</h3>
+            <h3 className="text-lg font-semibold text-white mb-3">Required Software for Windows</h3>
+            <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+            <h4 className="text-yellow-300 font-semibold mb-2">Perform the following steps:</h4>
+            <ol className="text-sm text-gray-300 space-y-1">
+              <li>1. Download <a href="https://s3.us-west-2.amazonaws.com/media.blueteamvillage.org/DC33/CTF-OBSIDIAN/SCRIPTS/Setup-WazuhCTF.ps1" className="text-cyan-400 hover:text-cyan-300 underline">Setup-WazuhCTF.ps1</a></li>
+              <li>2. Run the script as Administrator</li>
+              <li>3. Follow the prompts to install Wazuh SIEM and configure the CTF environment</li>
+            </ol>
+          </div>
+            <h3 className="text-lg font-semibold text-white mb-3">Required Software for macOS</h3>
             <div className="bg-gray-800/50 rounded-lg p-4">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-gray-300">Install Homebrew and Docker</span>
