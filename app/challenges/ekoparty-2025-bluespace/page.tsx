@@ -116,7 +116,7 @@ export default function EkopartyBluespacePage() {
               <CardTitle className="text-2xl font-bold text-cyan-300 text-center">Challenge Access</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg p-6">
                   <div className="flex items-center mb-4">
                     <Shield className="w-8 h-8 text-blue-400 mr-3" />
@@ -136,7 +136,8 @@ export default function EkopartyBluespacePage() {
                   </a>
                 </div>
 
-                <div className="bg-gradient-to-r from-green-500/10 to-cyan-500/10 border border-green-500/30 rounded-lg p-6">
+                {/* GEOSINT Challenge - Disabled */}
+                {/* <div className="bg-gradient-to-r from-green-500/10 to-cyan-500/10 border border-green-500/30 rounded-lg p-6">
                   <div className="flex items-center mb-4">
                     <Target className="w-8 h-8 text-green-400 mr-3" />
                     <h3 className="text-xl font-semibold text-green-300">GEOSINT Challenge</h3>
@@ -153,7 +154,7 @@ export default function EkopartyBluespacePage() {
                     <ExternalLink className="w-4 h-4 mr-2" />
                     Access GEOSINT Challenge
                   </a>
-                </div>
+                </div> */}
               </div>
             </CardContent>
           </Card>
