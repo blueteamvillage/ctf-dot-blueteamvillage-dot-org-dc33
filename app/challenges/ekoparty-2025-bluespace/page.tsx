@@ -110,55 +110,6 @@ export default function EkopartyBluespacePage() {
             </CardContent>
           </Card>
 
-          {/* CTF Links */}
-          <Card className="bg-gray-900/50 border-cyan-500/30 mb-8">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-cyan-300 text-center">Challenge Access</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 gap-6">
-                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-lg p-6">
-                  <div className="flex items-center mb-4">
-                    <Shield className="w-8 h-8 text-blue-400 mr-3" />
-                    <h3 className="text-xl font-semibold text-blue-300">CTFd Platform</h3>
-                  </div>
-                  <p className="text-gray-300 mb-4">
-                    Access the full Ekoparty 2025 Bluespace CTFd platform with all kill chain challenges, scoring, and leaderboards.
-                  </p>
-                  <a 
-                    href="https://bluespace.ctfd.io/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Access CTFd Platform
-                  </a>
-                </div>
-
-                {/* GEOSINT Challenge - Disabled */}
-                {/* <div className="bg-gradient-to-r from-green-500/10 to-cyan-500/10 border border-green-500/30 rounded-lg p-6">
-                  <div className="flex items-center mb-4">
-                    <Target className="w-8 h-8 text-green-400 mr-3" />
-                    <h3 className="text-xl font-semibold text-green-300">GEOSINT Challenge</h3>
-                  </div>
-                  <p className="text-gray-300 mb-4">
-                    Test your geolocation and OSINT skills with carefully curated infosec hotspots from around the world.
-                  </p>
-                  <a 
-                    href="https://geosint.blueteamvillage.org/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Access GEOSINT Challenge
-                  </a>
-                </div> */}
-              </div>
-            </CardContent>
-          </Card>
-
           {/* Installation Content */}
           <InstallationSteps />
 
